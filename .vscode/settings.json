@@ -20,7 +20,7 @@
   
     // ESLint jalan hanya saat save (tidak realtime)
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": "explicit"
     },
     "editor.formatOnSave": true,
   
