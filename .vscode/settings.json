@@ -1,0 +1,36 @@
+{
+    // Jangan index folder besar
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/node_modules/**": true,
+      "**/.next/**": true,
+      "**/dist/**": true
+    },
+    "files.exclude": {
+      "**/.next": true,
+      "**/node_modules": true,
+      "**/dist": true
+    },
+  
+    // Batasi memory tsserver (default bisa >1GB)
+    "typescript.tsserver.maxTsServerMemory": 2048,
+  
+    // Gunakan TS internal dari Next.js
+    "typescript.tsdk": "node_modules/typescript/lib",
+  
+    // ESLint jalan hanya saat save (tidak realtime)
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+  
+    // Matikan auto linting di background
+    "eslint.run": "onSave",
+  
+    // Supaya VSCode lebih enteng saat search
+    "search.exclude": {
+      "**/.next": true,
+      "**/node_modules": true,
+      "**/dist": true
+    }
+}  
