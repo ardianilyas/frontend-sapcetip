@@ -12,9 +12,11 @@ import { loginSchema, LoginSchema } from '../validators/auth.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { handleApiError } from '@/lib/api-error'
 import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'
 
 export default function SignInForm() {
     const { mutate, isPending } = useLogin();
+    const router = useRouter();
 
     const { 
         register,
@@ -26,6 +28,7 @@ export default function SignInForm() {
         mutate(data, {
             onSuccess: (res) => {
                 toast.success(res.message);
+                router.push("/");
             },
             onError: (err: any) => handleApiError(err),
         })
